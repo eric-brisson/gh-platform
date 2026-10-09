@@ -1,0 +1,21 @@
+# Secrets and local config
+.env
+.env.*
+*.pem
+*.key
+*.secret
+
+# Editor and IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local scratch and output
+tmp/
+*.log
