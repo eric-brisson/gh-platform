@@ -1,0 +1,9 @@
+[
+  { "name": "feature", "color": "0e8a16", "description": "New functionality" },
+  { "name": "bugfix", "color": "d73a4a", "description": "Fix for a defect" },
+  { "name": "chore", "color": "c5def5", "description": "Maintenance, tooling or refactoring" },
+  { "name": "hotfix", "color": "b60205", "description": "Urgent fix on a release line" },
+  { "name": "documentation", "color": "0075ca", "description": "Documentation only" },
+  { "name": "dependencies", "color": "5319e7", "description": "Dependency updates" },
+  { "name": "blocked", "color": "fbca04", "description": "Waiting on something else" }
+]
