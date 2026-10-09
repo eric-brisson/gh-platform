@@ -82,5 +82,20 @@ apply_rulesets() {
   fi
 }
 
+apply_labels() {
+  local name color description
+  log "applying labels"
+  while IFS=$'\t' read -r name color description; do
+    run gh label create "$name" --repo "$REPO" --color "$color" --description "$description" --force </dev/null
+    [[ "$DRY_RUN" == "1" ]] || ok "$name"
+  done < <(jq -r '.[] | [.name, .color, .description] | @tsv' "${SCRIPT_DIR}/../templates/labels.json")
+  if [[ "$DRY_RUN" == "1" ]]; then
+    log "dry-run: labels not changed"
+  else
+    log "labels applied"
+  fi
+}
+
 apply_repo_settings
 apply_rulesets
+apply_labels
